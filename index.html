@@ -425,17 +425,36 @@ function tickCountdown(){
 function ethCall(data){
   return window.ethereum.request({method:"eth_call",params:[{to:CONTRACT,data:data},"latest"]});
 }
+async function rpcCall(data){
+  var rpcs = ["https://bsc-dataseed1.defibit.io/","https://bsc-dataseed.binance.org/","https://bsc-dataseed1.ninicoin.io/"];
+  for (var i = 0; i < rpcs.length; i++) {
+    try {
+      var r = await fetch(rpcs[i], {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({jsonrpc:"2.0", id:1, method:"eth_call", params:[{to:CONTRACT, data:data}, "latest"]})});
+      var j = await r.json();
+      if (j && j.result) return j.result;
+    } catch(e) {}
+  }
+  throw new Error("rpc failed");
+}
+function applyLive(tm, pr){
+  liveTotalMinted = parseInt(tm, 16);
+  livePriceWei = BigInt(pr);
+  document.getElementById("statMinted").textContent = liveTotalMinted + " / 3,333";
+  document.getElementById("statPrice").textContent = fmtBNB(livePriceWei) + " BNB";
+  updateTotal();
+}
 async function readLive(){
-  if (!window.ethereum) return;
   try {
-    var tm = await ethCall("0xa2309ff8");
-    var pr = await ethCall("0x9d1b464a");
-    liveTotalMinted = parseInt(tm, 16);
-    livePriceWei = BigInt(pr);
-    document.getElementById("statMinted").textContent = liveTotalMinted + " / 3,333";
-    document.getElementById("statPrice").textContent = fmtBNB(livePriceWei) + " BNB";
-    updateTotal();
-  } catch(e) {}
+    if (window.ethereum) {
+      applyLive(await ethCall("0xa2309ff8"), await ethCall("0x9d1b464a"));
+    } else {
+      applyLive(await rpcCall("0xa2309ff8"), await rpcCall("0x9d1b464a"));
+    }
+  } catch(e) {
+    try {
+      applyLive(await rpcCall("0xa2309ff8"), await rpcCall("0x9d1b464a"));
+    } catch(e2) {}
+  }
 }
 async function doMint(){
   var st = document.getElementById("mintStatus");
@@ -495,6 +514,7 @@ try {
   if (saved && T[saved]) setLang(saved); else { updateTotal(); updateSupportHref(); }
 } catch(e) { updateTotal(); updateSupportHref(); }
 setInterval(tickCountdown, 1000);
+setInterval(readLive, 30000);
 tickCountdown();
 readLive();
 </script>
