@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HATCHIE — 每一颗蛋都蕴藏着传奇。</title>
+<meta name="description" content="HATCHIE — Every Egg Holds a Legend. 3,333 NFT on BNB Chain. Phase 1: 0.0005 BNB, Phase 2: 0.005 BNB. Preview page, mint not open yet.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d0714;color:#f3efff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
+a{color:#c084fc;text-decoration:none}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 48px}
+.top{position:sticky;top:0;z-index:10;background:rgba(13,7,20,.95);backdrop-filter:blur(6px);border-bottom:1px solid #2a1845}
+.topin{max-width:860px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{font-weight:800;letter-spacing:.12em;font-size:18px}
+.logo span{color:#c084fc}
+nav{display:flex;gap:12px;flex-wrap:wrap;font-size:14px}
+nav a{color:#d8c8f5}
+.lang{display:flex;gap:6px;margin-left:auto}
+.lang button{background:#241040;border:1px solid #7c3aed;color:#e9d5ff;padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer}
+.lang button.active{background:#9333ea;color:#fff}
+.pill{display:inline-block;background:#2a1845;border:1px solid #7c3aed;color:#e9d5ff;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.pill.gold{background:#3a2a10;border-color:#b8860b;color:#fde68a}
+.hero{text-align:center;padding:36px 0 8px}
+.hero img{width:min(340px,82vw);border-radius:24px;border:1px solid #3b2170;box-shadow:0 0 60px rgba(168,85,247,.35)}
+.hero h1{font-size:clamp(30px,7vw,48px);line-height:1.1;margin:18px 0 8px}
+.hero p{color:#c9b8e6;max-width:560px;margin:0 auto}
+.btn{display:inline-block;background:#9333ea;color:#fff;font-weight:700;padding:12px 22px;border-radius:12px;border:0;font-size:16px;cursor:pointer}
+.btn:disabled{background:#3b2a55;color:#a78bca;cursor:not-allowed}
+.btn.ghost{background:transparent;border:1px solid #7c3aed;color:#e9d5ff}
+section{padding:34px 0 4px}
+.kicker{font-size:12px;letter-spacing:.18em;color:#c084fc;font-weight:800;text-transform:uppercase}
+h2{font-size:26px;margin:6px 0 10px}
+.muted{color:#b9a6d6;font-size:15px}
+.card{background:#170b28;border:1px solid #2f1a52;border-radius:18px;padding:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.stat{background:#12081f;border:1px solid #2f1a52;border-radius:14px;padding:12px;text-align:center}
+.stat b{display:block;font-size:20px}
+.stat span{font-size:12px;color:#b9a6d6}
+.phase{border:1px solid #7c3aed}
+.phase h3{font-size:19px}
+.price{font-size:28px;font-weight:800;color:#e9d5ff}
+.price small{font-size:14px;color:#b9a6d6;font-weight:400}
+.qty{display:flex;align-items:center;gap:10px;margin:14px 0}
+.qty button{width:40px;height:40px;border-radius:10px;border:1px solid #7c3aed;background:#241040;color:#fff;font-size:20px;cursor:pointer}
+.qty b{font-size:20px;min-width:24px;text-align:center}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.tile{background:#170b28;border:1px solid #2f1a52;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:10px}
+.tile img{width:100%;display:block}
+.tile span{font-size:13px;color:#d8c8f5}
+ol.steps{padding-left:20px}
+ol.steps li{margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:15px}
+td{padding:10px 6px;border-bottom:1px solid #2f1a52;vertical-align:top}
+td:first-child{color:#b9a6d6;width:46%}
+.note{font-size:13px;color:#a78bca;margin-top:12px}
+.foot{border-top:1px solid #2f1a52;margin-top:40px;padding-top:18px;color:#a78bca;font-size:13px;text-align:center}
+@media(max-width:640px){
+  .grid2,.grid4{grid-template-columns:1fr 1fr}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .grid4 .stat b{font-size:17px}
+  .lang{margin-left:0}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin">
+  <div class="logo">HATCHIE<span>.</span></div>
+  <nav><a href="#mint" data-t="nav_mint">铸造</a><a href="#characters" data-t="nav_characters">角色</a><a href="#how" data-t="nav_how">铸造指南</a><a href="#spec" data-t="nav_spec">规格</a><a href="#contracts" data-t="nav_contracts">合约</a><a href="https://x.com/HATCHIEggy" target="_blank" rel="noopener">𝕏</a></nav>
+  <div class="lang">
+    <button type="button" data-lang="zh" class="active">中文</button>
+    <button type="button" data-lang="en">English</button>
+    <button type="button" data-lang="ja">日本語</button>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="hero">
+    <span class="pill" id="mintPill" data-t="pill_preview">预览 — 尚未开启铸造</span>
+    <div style="margin-top:16px"><img src="assets/hero.jpg" alt="HATCHIE hero egg"></div>
+    <h1 data-t="hero_title">每一颗蛋都蕴藏着传奇。</h1>
+    <p data-t="hero_sub">3,333 颗传奇之蛋，铸造于 BNB Chain。每颗蛋都会孵化出一个角色，编号按顺序从小到大分配。</p>
+    <div style="margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a class="btn" href="#mint" data-t="btn_mint_view">查看铸造</a>
+      <a class="btn ghost" href="#characters" data-t="btn_characters">查看角色</a>
+      <a class="btn ghost" href="https://x.com/HATCHIEggy" target="_blank" rel="noopener">𝕏 @HATCHIEggy</a>
+    </div>
+  </div>
+
+  <section id="mint">
+    <div class="kicker" data-t="mint_kicker">铸造 · BNB Chain</div>
+    <h2 data-t="mint_title">两个阶段，一个传奇。</h2>
+    <p class="muted" data-t="mint_sub">以下价格与阶段为预览规格。铸造尚未开启 — 铸造按钮将在合约部署并经你确认开启后才生效。</p>
+    <div class="grid2" style="margin-top:16px">
+      <div class="card phase">
+        <span class="pill" data-t="phase1_label">第一阶段</span>
+        <h3 style="margin-top:10px" data-t="phase1_title">代币 1 – 333</h3>
+        <div style="margin:6px 0"><span class="pill gold" data-t="phase1_save">比第二阶段便宜 90%</span></div>
+        <div class="price">0.0005 BNB <small data-t="price1_idr">≈ Rp6,404*</small></div>
+        <p class="muted" data-t="phase1_note">初始价格。前 333 颗。</p>
+      </div>
+      <div class="card">
+        <span class="pill gold" data-t="phase2_label">第二阶段</span>
+        <h3 style="margin-top:10px" data-t="phase2_title">代币 334 – 3,333</h3>
+        <div class="price">0.005 BNB <small data-t="price2_idr">≈ Rp64,043*</small></div>
+        <p class="muted" data-t="phase2_note">剩余 3,000 颗，直至售罄。</p>
+      </div>
+    </div>
+
+    <p class="note" data-t="phase_switch">第 333 颗铸造完成后，价格将自动切换为第二阶段价格。</p>
+    <div class="card" style="margin-top:14px">
+      <span class="pill" data-t="mintcard_label">铸造卡 — 预览</span>
+      <div class="grid4">
+        <div class="stat"><b>3,333</b><span data-t="stat_supply">总供应量</span></div>
+        <div class="stat"><b id="statMinted">0 / 3,333</b><span data-t="stat_minted">已铸造（预览）</span></div>
+        <div class="stat"><b id="statPrice">0.0005 BNB</b><span data-t="stat_price1">第一阶段价格</span></div>
+        <div class="stat"><b>11</b><span data-t="stat_max">每钱包上限（总计）</span></div>
+      </div>
+      <div style="margin-top:14px;font-weight:700" id="countdown">—</div>
+      <div class="qty">
+        <button type="button" onclick="chg(-1)" aria-label="decrease">−</button>
+        <b id="q">1</b>
+        <button type="button" onclick="chg(1)" aria-label="increase">+</button>
+        <span class="muted" id="total">总计：0.0005 BNB（第一阶段）</span>
+      </div>
+      <button class="btn" id="mintBtn" disabled onclick="doMint()">Mint</button>
+      <p class="muted" id="mintStatus" style="margin-top:10px"></p>
+      <p class="note" data-t="mint_note">每钱包上限 11 枚为累计总数（非每阶段）— 已铸造 11 枚的钱包无法在第二阶段再次铸造。人民币价格为估算，依据 1 BNB ≈ Rp12,808,548 的汇率，随市场波动 — 合约价格始终以 BNB 计价。</p>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="kicker" data-t="support_kicker">支持</div>
+    <h2 data-t="support_title">支持 HATCHIE</h2>
+    <div class="card">
+      <p class="muted" data-t="support_sub">喜欢、评论、转发都从主页开始 — X 没有“一键点赞主页”的链接，点赞/评论/转发是针对单条帖子的，所以下面按钮会带你到主页与最新帖子，你可以在那里直接支持。</p>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="https://x.com/intent/follow?screen_name=HATCHIEggy" target="_blank" rel="noopener" data-t="support_follow">关注 @HATCHIEggy</a>
+        <a class="btn ghost" id="supportPost" href="https://x.com/HATCHIEggy" target="_blank" rel="noopener" data-t="support_post">发帖支持</a>
+        <a class="btn ghost" href="https://x.com/HATCHIEggy" target="_blank" rel="noopener" data-t="support_profile">访问主页</a>
+      </div>
+      <p class="note" data-t="support_note">点赞 / 评论 / 转发：打开主页后，对最新帖子点赞、评论或转发即可。</p>
+    </div>
+  </section>
+
+  <section id="characters">
+    <div class="kicker" data-t="char_kicker">收藏</div>
+    <h2 data-t="char_title">一颗蛋，九种形态</h2>
+    <p class="muted" data-t="char_sub">以下为你提供的 artwork 中可见的九种形态。下方名称为外观描述；角色正式名称与各形态稀有度数量待你确认。</p>
+    <div class="tiles">
+      <div class="tile"><img src="assets/egg-guardian.jpg" alt="Egg Guardian"><span data-t="tile_egg">蛋守护者</span></div>
+      <div class="tile"><img src="assets/crown-egg.jpg" alt="Crown Egg"><span data-t="tile_crown">皇冠蛋</span></div>
+      <div class="tile"><img src="assets/shadow-mage.jpg" alt="Shadow Mage"><span data-t="tile_shadow">暗影法师</span></div>
+      <div class="tile"><img src="assets/crystal-wizard.jpg" alt="Crystal Wizard"><span data-t="tile_crystal">水晶巫师</span></div>
+      <div class="tile"><img src="assets/flame-dragon.jpg" alt="Flame Dragon"><span data-t="tile_flame">烈焰龙</span></div>
+      <div class="tile"><img src="assets/sky-angel.jpg" alt="Sky Angel"><span data-t="tile_sky">天空天使</span></div>
+      <div class="tile"><img src="assets/cyber-egg.jpg" alt="Cyber Egg"><span data-t="tile_cyber">赛博蛋</span></div>
+      <div class="tile"><img src="assets/void-egg.jpg" alt="Void Egg"><span data-t="tile_void">虚空蛋</span></div>
+      <div class="tile"><img src="assets/golden-phoenix.jpg" alt="Golden Phoenix"><span data-t="tile_golden">金凤凰</span></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="kicker" data-t="how_kicker">铸造指南 — 分步说明</div>
+    <h2 data-t="how_title">铸造方式（开启后）</h2>
+    <ol class="steps">
+      <li data-t="how_1"><b>连接钱包</b> — 在支持 BNB Chain 的钱包中打开本页（如 Binance Wallet / MetaMask），并确保网络为 BNB Mainnet（链 56）。</li>
+      <li data-t="how_2"><b>选择数量</b> — 设置铸造数量（不超过每钱包上限），并核对 BNB 总额。</li>
+      <li data-t="how_3"><b>确认铸造</b> — 点击 Mint 并在钱包中批准交易。你只需支付铸造价格 + 网络 gas 费。</li>
+      <li data-t="how_4"><b>查看你的 NFT</b> — NFT 将按剩余编号从小到大顺序进入你的钱包。</li>
+    </ol>
+  </section>
+
+  <section id="spec">
+    <div class="kicker" data-t="spec_kicker">规格表</div>
+    <h2 data-t="spec_title">HATCHIE 规格</h2>
+    <div class="card"><table>
+      <tr><td data-t="spec_name">名称</td><td><b>HATCHIE</b> — <span data-t="tagline">每一颗蛋都蕴藏着传奇。</span></td></tr>
+      <tr><td data-t="spec_chain">链</td><td>BNB Chain Mainnet (56)</td></tr>
+      <tr><td data-t="spec_standard">标准</td><td>BEP-721 (NFT)</td></tr>
+      <tr><td data-t="spec_supply">总供应量</td><td>3,333</td></tr>
+      <tr><td data-t="spec_ids">编号</td><td data-t="spec_ids_v">顺序编号 1 – 3,333</td></tr>
+      <tr><td data-t="spec_p1">第一阶段</td><td data-t="spec_p1_v">代币 1 – 333 · 0.0005 BNB (≈ Rp6,404*)</td></tr>
+      <tr><td data-t="spec_p2">第二阶段</td><td data-t="spec_p2_v">代币 334 – 3,333 · 0.005 BNB (≈ Rp64,043*)</td></tr>
+      <tr><td data-t="spec_sellout">售罄总额</td><td data-t="spec_sellout_v">15.1665 BNB (≈ Rp194,260,843*)</td></tr>
+      <tr><td data-t="spec_max">每钱包上限</td><td data-t="spec_max_v">11（总计，累计 — 老项目模式）</td></tr>
+      <tr><td data-t="spec_rarity">稀有度</td><td data-t="spec_rarity_v">待定 — 各形态数量尚未确认</td></tr>
+      <tr><td data-t="spec_contract">合约</td><td><a href="https://bscscan.com/address/0x28918c8DA0836dC984057a04865b17A5820398fb" target="_blank" rel="noopener">0x2891…0398fb</a></td></tr>
+      <tr><td data-t="spec_x">X 账号</td><td><a href="https://x.com/HATCHIEggy" target="_blank" rel="noopener">@HATCHIEggy</a></td></tr>
+    </table></div>
+    <p class="note" data-t="spec_note">* 人民币价格估算依据 1 BNB ≈ Rp12,808,548（CoinLore，2026年10月31日 19:15 UTC）。这不是银行到账的人民币 — BNB 仍需出售，且有网络手续费。</p>
+  </section>
+
+  <section id="contracts">
+    <div class="kicker" data-t="contracts_kicker">链上 · BNB Chain</div>
+    <h2 data-t="contracts_title">合约</h2>
+    <div class="card">
+      <p class="muted" data-t="contracts_text">HATCHIE 合约已部署于 BNB Chain：</p>
+      <p style="margin-top:8px;word-break:break-all"><a href="https://bscscan.com/address/0x28918c8DA0836dC984057a04865b17A5820398fb" target="_blank" rel="noopener">0x28918c8DA0836dC984057a04865b17A5820398fb</a></p>
+      <p class="muted" style="margin-top:8px">Metadata: <a href="https://hatchie-sangfariz16-2583s-projects.vercel.app/metadata/1" target="_blank" rel="noopener">hatchie…vercel.app/metadata/</a> + tokenId</p>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <button class="btn ghost" onclick="copyLink()" data-t="copy_btn">复制页面链接</button>
+        <a class="btn ghost" href="https://x.com/HATCHIEggy" target="_blank" rel="noopener">𝕏 @HATCHIEggy</a>
+        <span id="copied" class="muted"></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span data-t="footer">HATCHIE — 每一颗蛋都蕴藏着传奇。</span><br>
+    <a href="https://x.com/HATCHIEggy" target="_blank" rel="noopener">𝕏 @HATCHIEggy</a>
+  </div>
+</div>
+<script>
+var T = {
+zh: {
+nav_mint:"铸造",nav_characters:"角色",nav_how:"铸造指南",nav_spec:"规格",nav_contracts:"合约",
+pill_preview:"预览 — 尚未开启铸造",hero_title:"每一颗蛋都蕴藏着传奇。",
+hero_sub:"3,333 颗传奇之蛋，铸造于 BNB Chain。每颗蛋都会孵化出一个角色，编号按顺序从小到大分配。",
+btn_mint_view:"查看铸造",btn_characters:"查看角色",
+mint_kicker:"铸造 · BNB Chain",mint_title:"两个阶段，一个传奇。",
+mint_sub:"以下价格与阶段为预览规格。铸造尚未开启 — 铸造按钮将在合约部署并经你确认开启后才生效。",
+phase1_label:"第一阶段",phase1_title:"代币 1 – 333",phase1_note:"初始价格。前 333 颗。",
+phase2_label:"第二阶段",phase2_title:"代币 334 – 3,333",phase2_note:"剩余 3,000 颗，直至售罄。",
+mintcard_label:"铸造卡 — 预览",stat_supply:"总供应量",stat_minted:"已铸造（预览）",stat_price1:"第一阶段价格",stat_max:"每钱包上限（总计）",
+btn_mint_disabled:"尚未开启铸造",
+pill_live:"铸造已开启 — 13:00 UTC 开放",countdown_to:"距离开启：",countdown_open:"铸造已开启！",mint_now:"立即铸造",mint_closed:"13:00 UTC 开放铸造",
+status_nowallet:"请在支持 BNB Chain 的钱包浏览器中打开本页（如 Binance Wallet / MetaMask）。",status_connecting:"正在连接钱包…",status_switching:"正在切换到 BNB Mainnet…",status_confirm:"请在钱包中确认交易…",status_success:"铸造成功！交易：",status_failed:"交易失败或被拒绝，请重试。",status_open_wait:"铸造将于 13:00 UTC 开放，请稍后再试。",
+mint_note:"每钱包上限 11 枚为累计总数（非每阶段）— 已铸造 11 枚的钱包无法在第二阶段再次铸造。人民币价格为估算，依据 1 BNB ≈ Rp12,808,548 的汇率，随市场波动 — 合约价格始终以 BNB 计价。",
+phase1_save:"比第二阶段便宜 90%",phase_switch:"第 333 颗铸造完成后，价格将自动切换为第二阶段价格。",
+support_kicker:"支持",support_title:"支持 HATCHIE",
+support_sub:"喜欢、评论、转发都从主页开始 — X 没有“一键点赞主页”的链接，点赞/评论/转发是针对单条帖子的，所以下面按钮会带你到主页与最新帖子，你可以在那里直接支持。",
+support_follow:"关注 @HATCHIEggy",support_post:"发帖支持",support_profile:"访问主页",
+support_note:"点赞 / 评论 / 转发：打开主页后，对最新帖子点赞、评论或转发即可。",
+support_text:"我支持 HATCHIE！每一颗蛋都蕴藏着传奇。🐣💜",
+char_kicker:"收藏",char_title:"一颗蛋，九种形态",char_sub:"以下为你提供的 artwork 中可见的九种形态。下方名称为外观描述；角色正式名称与各形态稀有度数量待你确认。",
+tile_egg:"蛋守护者",tile_crown:"皇冠蛋",tile_shadow:"暗影法师",tile_crystal:"水晶巫师",tile_flame:"烈焰龙",tile_sky:"天空天使",tile_cyber:"赛博蛋",tile_void:"虚空蛋",tile_golden:"金凤凰",
+how_kicker:"铸造指南 — 分步说明",how_title:"铸造方式（开启后）",
+how_1:"连接钱包 — 在支持 BNB Chain 的钱包中打开本页（如 Binance Wallet / MetaMask），并确保网络为 BNB Mainnet（链 56）。",
+how_2:"选择数量 — 设置铸造数量（不超过每钱包上限），并核对 BNB 总额。",
+how_3:"确认铸造 — 点击 Mint 并在钱包中批准交易。你只需支付铸造价格 + 网络 gas 费。",
+how_4:"查看你的 NFT — NFT 将按剩余编号从小到大顺序进入你的钱包。",
+spec_kicker:"规格表",spec_title:"HATCHIE 规格",spec_name:"名称",tagline:"每一颗蛋都蕴藏着传奇。",
+spec_chain:"链",spec_standard:"标准",spec_supply:"总供应量",spec_ids:"编号",spec_ids_v:"顺序编号 1 – 3,333",
+spec_p1:"第一阶段",spec_p1_v:"代币 1 – 333 · 0.0005 BNB (≈ Rp6,404*)",
+spec_p2:"第二阶段",spec_p2_v:"代币 334 – 3,333 · 0.005 BNB (≈ Rp64,043*)",
+spec_sellout:"售罄总额",spec_sellout_v:"15.1665 BNB (≈ Rp194,260,843*)",
+spec_max:"每钱包上限",spec_max_v:"11（总计，累计 — 老项目模式）",
+spec_rarity:"稀有度",spec_rarity_v:"待定 — 各形态数量尚未确认",
+spec_contract:"合约",spec_contract_v:"尚未部署",spec_x:"X 账号",
+spec_note:"* 人民币价格估算依据 1 BNB ≈ Rp12,808,548（CoinLore，2026年10月31日 19:15 UTC）。这不是银行到账的人民币 — BNB 仍需出售，且有网络手续费。",
+contracts_kicker:"链上 · BNB Chain",contracts_title:"合约",
+contracts_text:"HATCHIE 合约尚未部署。合约地址、BscScan 与 metadata 将在部署后显示于此 — 预览页不会展示虚假地址。",
+copy_btn:"复制页面链接",footer:"HATCHIE — 每一颗蛋都蕴藏着传奇。",
+qty_total:function(n){return "总计：" + (n*0.0005).toFixed(4) + " BNB（第一阶段）";},
+copied:"链接已复制。"
+},
+en: {
+nav_mint:"Mint",nav_characters:"Characters",nav_how:"How It Works",nav_spec:"Spec Sheet",nav_contracts:"Contracts",
+pill_preview:"PREVIEW — MINT NOT OPEN YET",hero_title:"Every Egg Holds a Legend.",
+hero_sub:"3,333 legendary eggs on BNB Chain. Each egg hatches into one character — IDs are assigned sequentially from the lowest.",
+btn_mint_view:"View Mint",btn_characters:"View Characters",
+mint_kicker:"MINT · BNB CHAIN",mint_title:"Two Phases. One Legend.",
+mint_sub:"Prices and phases below are preview specs. Mint is not active yet — the mint button will only work after the contract is deployed and you confirm opening mint.",
+phase1_label:"PHASE 1",phase1_title:"Token 1 – 333",phase1_note:"Opening price. First 333 tokens.",
+phase2_label:"PHASE 2",phase2_title:"Token 334 – 3,333",phase2_note:"Remaining 3,000 tokens until sold out.",
+mintcard_label:"MINT CARD — PREVIEW",stat_supply:"Total Supply",stat_minted:"Minted (preview)",stat_price1:"Phase 1 Price",stat_max:"Max / Wallet (total)",
+btn_mint_disabled:"Mint Not Open Yet",
+pill_live:"MINT IS LIVE — Opened 13:00 UTC",countdown_to:"Opens in: ",countdown_open:"Mint is LIVE!",mint_now:"Mint Now",mint_closed:"Opens 13:00 UTC",
+status_nowallet:"Open this page in a BNB Chain wallet browser (e.g. Binance Wallet / MetaMask).",status_connecting:"Connecting wallet…",status_switching:"Switching to BNB Mainnet…",status_confirm:"Confirm the transaction in your wallet…",status_success:"Mint successful! Tx: ",status_failed:"Transaction failed or rejected, please try again.",status_open_wait:"Mint opens at 13:00 UTC, please try again then.",
+mint_note:"Max 11 per wallet is cumulative (not per phase) — a wallet that already minted 11 cannot mint again in Phase 2. IDR prices are estimates at 1 BNB ≈ Rp12,808,548 and move with the market — contract prices are always in BNB.",
+phase1_save:"90% cheaper than Phase 2",phase_switch:"Once token #333 is minted, the price automatically switches to the Phase 2 price.",
+support_kicker:"SUPPORT",support_title:"Support HATCHIE",
+support_sub:"Likes, comments, and reposts happen on individual posts — X has no single link that likes a whole profile, so these buttons take you to the profile and its latest posts, where you can support directly.",
+support_follow:"Follow @HATCHIEggy",support_post:"Post Support",support_profile:"Visit Profile",
+support_note:"To like / comment / repost: open the profile, then like, comment, or repost its latest post.",
+support_text:"I support HATCHIE! Every Egg Holds a Legend. 🐣💜",
+char_kicker:"COLLECTION",char_title:"9 Variants from One Egg",char_sub:"Nine forms visible in the artwork you sent. Names below are visual descriptions; official character names and rarity counts per variant are pending your confirmation.",
+tile_egg:"Egg Guardian",tile_crown:"Crown Egg",tile_shadow:"Shadow Mage",tile_crystal:"Crystal Wizard",tile_flame:"Flame Dragon",tile_sky:"Sky Angel",tile_cyber:"Cyber Egg",tile_void:"Void Egg",tile_golden:"Golden Phoenix",
+how_kicker:"HOW IT WORKS — STEP BY STEP",how_title:"How to Mint (Once Open)",
+how_1:"Connect your wallet — open this page in a wallet that supports BNB Chain (e.g. Binance Wallet / MetaMask) and make sure the network is BNB Mainnet (chain 56).",
+how_2:"Choose quantity — set how many to mint (within the per-wallet limit) and check the total BNB.",
+how_3:"Confirm mint — press Mint and approve the transaction in your wallet. You only pay the mint price + network gas.",
+how_4:"Check your NFT — the NFT goes to your wallet with the lowest still-available sequential ID.",
+spec_kicker:"SPEC SHEET",spec_title:"HATCHIE Specifications",spec_name:"Name",tagline:"Every Egg Holds a Legend.",
+spec_chain:"Chain",spec_standard:"Standard",spec_supply:"Total Supply",spec_ids:"IDs",spec_ids_v:"Sequential 1 – 3,333",
+spec_p1:"Phase 1",spec_p1_v:"Token 1 – 333 · 0.0005 BNB (≈ Rp6,404*)",
+spec_p2:"Phase 2",spec_p2_v:"Token 334 – 3,333 · 0.005 BNB (≈ Rp64,043*)",
+spec_sellout:"Total if Sold Out",spec_sellout_v:"15.1665 BNB (≈ Rp194,260,843*)",
+spec_max:"Max per Wallet",spec_max_v:"11 (total, cumulative — old-project pattern)",
+spec_rarity:"Rarity",spec_rarity_v:"Pending — counts per variant not yet confirmed",
+spec_contract:"Contract",spec_contract_v:"Not yet deployed",spec_x:"X Profile",
+spec_note:"* IDR estimates use 1 BNB ≈ Rp12,808,548 (CoinLore, 31 Oct 2026 19:15 UTC). This is not IDR in a bank account — BNB still needs to be sold and network fees apply.",
+contracts_kicker:"ON-CHAIN · BNB CHAIN",contracts_title:"Contracts",
+contracts_text:"The HATCHIE contract is not deployed yet. The contract address, BscScan, and metadata will appear here after deployment — this preview page shows no fake address.",
+copy_btn:"Copy Page Link",footer:"HATCHIE — Every Egg Holds a Legend.",
+qty_total:function(n){return "Total: " + (n*0.0005).toFixed(4) + " BNB (Phase 1)";},
+copied:"Link copied."
+},
+ja: {
+nav_mint:"ミント",nav_characters:"キャラクター",nav_how:"使い方",nav_spec:"仕様",nav_contracts:"コントラクト",
+pill_preview:"プレビュー — ミント未開始",hero_title:"すべての卵に伝説が宿る。",
+hero_sub:"BNB Chain 上の 3,333 個の伝説の卵。卵はそれぞれ1体のキャラクターになり、ID は小さい順に割り当てられます。",
+btn_mint_view:"ミントを見る",btn_characters:"キャラクターを見る",
+mint_kicker:"ミント · BNB Chain",mint_title:"2つのフェーズ、1つの伝説。",
+mint_sub:"以下の価格とフェーズはプレビュー仕様です。ミントはまだ有効ではありません — 契約のデプロイと開始確認後にのみボタンが機能します。",
+phase1_label:"フェーズ1",phase1_title:"トークン 1 – 333",phase1_note:"初期価格。最初の333個。",
+phase2_label:"フェーズ2",phase2_title:"トークン 334 – 3,333",phase2_note:"残り3,000個、完売まで。",
+mintcard_label:"ミントカード — プレビュー",stat_supply:"総供給量",stat_minted:"ミント済み（プレビュー）",stat_price1:"フェーズ1価格",stat_max:"ウォレット上限（合計）",
+btn_mint_disabled:"ミント未開始",
+pill_live:"ミント開始 — 13:00 UTC に開放",countdown_to:"開始まで：",countdown_open:"ミント開始！",mint_now:"今すぐミント",mint_closed:"13:00 UTC に開始",
+status_nowallet:"BNB Chain 対応ウォレットブラウザ（Binance Wallet / MetaMask など）で本ページを開いてください。",status_connecting:"ウォレットに接続中…",status_switching:"BNB Mainnet に切替中…",status_confirm:"ウォレットで取引を確認してください…",status_success:"ミント成功！取引：",status_failed:"取引が失敗または拒否されました。再試行してください。",status_open_wait:"ミントは 13:00 UTC に開始します。その後再試行してください。",
+mint_note:"ウォレット上限11枚は累計（フェーズごとではありません）— すでに11枚をミントしたウォレットはフェーズ2で再度ミントできません。IDR価格は1 BNB ≈ Rp12,808,548での推定で、相場により変動します — 契約価格は常にBNB建てです。",
+phase1_save:"フェーズ2より90%お得",phase_switch:"333個目がミントされると、価格は自動的にフェーズ2価格に切り替わります。",
+support_kicker:"応援",support_title:"HATCHIE を応援",
+support_sub:"いいね・コメント・リポストは個別の投稿に対するものです — プロフィール全体に一括でいいねするリンクは X にはありません。そのため、以下のボタンでプロフィールと最新投稿へ移動し、そこで直接応援できます。",
+support_follow:"@HATCHIEggy をフォロー",support_post:"応援ポスト",support_profile:"プロフィールを見る",
+support_note:"いいね・コメント・リポストするには：プロフィールを開き、最新投稿にいいね・コメント・リポストしてください。",
+support_text:"HATCHIE を応援しています！すべての卵に伝説が宿る。🐣💜",
+char_kicker:"コレクション",char_title:"1つの卵から9つの姿",char_sub:"お送りいただいたアートワークに見られる9つの姿です。以下の名前は見た目の説明であり、正式名称とレアリティ数量は確認待ちです。",
+tile_egg:"エッグガーディアン",tile_crown:"クラウンエッグ",tile_shadow:"シャドウメイジ",tile_crystal:"クリスタルウィザード",tile_flame:"フレイムドラゴン",tile_sky:"スカイエンジェル",tile_cyber:"サイバーエッグ",tile_void:"ヴォイドエッグ",tile_golden:"ゴールデンフェニックス",
+how_kicker:"使い方 — ステップバイステップ",how_title:"ミント方法（開始後）",
+how_1:"ウォレットを接続 — BNB Chain 対応ウォレット（Binance Wallet / MetaMask など）で本ページを開き、ネットワークが BNB Mainnet（チェーン56）であることを確認してください。",
+how_2:"数量を選択 — 数量を設定し（ウォレット上限以内）、BNB合計を確認してください。",
+how_3:"ミントを確定 — Mint を押し、ウォレットで取引を承認してください。支払いはミント価格＋ネットワークガス代のみです。",
+how_4:"NFTを確認 — NFT は残りの番号の小さい順にウォレットへ送られます。",
+spec_kicker:"仕様",spec_title:"HATCHIE 仕様",spec_name:"名称",tagline:"すべての卵に伝説が宿る。",
+spec_chain:"チェーン",spec_standard:"規格",spec_supply:"総供給量",spec_ids:"ID",spec_ids_v:"連番 1 – 3,333",
+spec_p1:"フェーズ1",spec_p1_v:"トークン 1 – 333 · 0.0005 BNB (≈ Rp6,404*)",
+spec_p2:"フェーズ2",spec_p2_v:"トークン 334 – 3,333 · 0.005 BNB (≈ Rp64,043*)",
+spec_sellout:"完売時の合計",spec_sellout_v:"15.1665 BNB (≈ Rp194,260,843*)",
+spec_max:"ウォレット上限",spec_max_v:"11（合計、累計 — 旧プロジェクト方式）",
+spec_rarity:"レアリティ",spec_rarity_v:"確認待ち — 形態ごとの数量は未確認",
+spec_contract:"コントラクト",spec_contract_v:"未デプロイ",spec_x:"X プロフィール",
+spec_note:"* IDR推定は1 BNB ≈ Rp12,808,548（CoinLore、2026年10月31日19:15 UTC）に基づきます。これは銀行口座のIDRではありません — BNBは売却が必要で、ネットワーク手数料がかかります。",
+contracts_kicker:"オンチェーン · BNB Chain",contracts_title:"コントラクト",
+contracts_text:"HATCHIEコントラクトは未デプロイです。コントラクトアドレス、BscScan、メタデータはデプロイ後にここに表示されます — プレビューページに偽のアドレスは表示されません。",
+copy_btn:"ページリンクをコピー",footer:"HATCHIE — すべての卵に伝説が宿る。",
+qty_total:function(n){return "合計：" + (n*0.0005).toFixed(4) + " BNB（フェーズ1）";},
+copied:"リンクをコピーしました。"
+}
+};
+var lang = "zh", q = 1;
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = (l === "zh" ? "zh-CN" : l);
+  document.querySelectorAll("[data-t]").forEach(function(el){
+    var v = T[l][el.getAttribute("data-t")];
+    if (typeof v === "string") el.textContent = v;
+  });
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.classList.toggle("active", b.getAttribute("data-lang") === l);
+  });
+  updateTotal();
+  updateSupportHref();
+  tickCountdown();
+  try { localStorage.setItem("hatchie_lang", l); } catch(e) {}
+}
+var CONTRACT = "0x28918c8DA0836dC984057a04865b17A5820398fb";
+var MINT_START_MS = 1793538000 * 1000;
+var livePriceWei = 500000000000000n;
+var liveTotalMinted = null;
+var PHASE_LABEL = {zh:["第一阶段","第二阶段"],en:["Phase 1","Phase 2"],ja:["フェーズ1","フェーズ2"]};
+var TOTAL_PREFIX = {zh:"总计：",en:"Total: ",ja:"合計："};
+function fmtBNB(wei){
+  var s = wei.toString();
+  while (s.length <= 18) s = "0" + s;
+  var out = s.slice(0, -18) + "." + s.slice(-18);
+  return out.replace(/0+$/,"").replace(/\.$/,"");
+}
+function updateTotal(){
+  var phase = (liveTotalMinted !== null && liveTotalMinted >= 333) ? PHASE_LABEL[lang][1] : PHASE_LABEL[lang][0];
+  document.getElementById("total").textContent = TOTAL_PREFIX[lang] + (Number(livePriceWei * BigInt(q)) / 1e18).toFixed(4) + " BNB (" + phase + ")";
+}
+function tickCountdown(){
+  var btn = document.getElementById("mintBtn");
+  var cd = document.getElementById("countdown");
+  var pill = document.getElementById("mintPill");
+  var now = Date.now();
+  if (now >= MINT_START_MS) {
+    cd.textContent = T[lang].countdown_open;
+    btn.disabled = false;
+    btn.textContent = T[lang].mint_now;
+    if (pill) pill.textContent = T[lang].pill_live;
+  } else {
+    var rem = Math.floor((MINT_START_MS - now) / 1000);
+    var hh = String(Math.floor(rem / 3600)).padStart(2, "0");
+    var mm = String(Math.floor((rem % 3600) / 60)).padStart(2, "0");
+    var ss = String(rem % 60).padStart(2, "0");
+    cd.textContent = T[lang].countdown_to + hh + ":" + mm + ":" + ss;
+    btn.disabled = true;
+    btn.textContent = T[lang].mint_closed;
+  }
+}
+function ethCall(data){
+  return window.ethereum.request({method:"eth_call",params:[{to:CONTRACT,data:data},"latest"]});
+}
+async function readLive(){
+  if (!window.ethereum) return;
+  try {
+    var tm = await ethCall("0xa2309ff8");
+    var pr = await ethCall("0x9d1b464a");
+    liveTotalMinted = parseInt(tm, 16);
+    livePriceWei = BigInt(pr);
+    document.getElementById("statMinted").textContent = liveTotalMinted + " / 3,333";
+    document.getElementById("statPrice").textContent = fmtBNB(livePriceWei) + " BNB";
+    updateTotal();
+  } catch(e) {}
+}
+async function doMint(){
+  var st = document.getElementById("mintStatus");
+  if (Date.now() < MINT_START_MS) { st.textContent = T[lang].status_open_wait; return; }
+  if (!window.ethereum) { st.textContent = T[lang].status_nowallet; return; }
+  try {
+    st.textContent = T[lang].status_connecting;
+    var accounts = await window.ethereum.request({method:"eth_requestAccounts"});
+    var from = accounts[0];
+    try {
+      await window.ethereum.request({method:"wallet_switchEthereumChain",params:[{chainId:"0x38"}]});
+    } catch(e) {
+      if (e && e.code === 4902) {
+        st.textContent = T[lang].status_switching;
+        await window.ethereum.request({method:"wallet_addEthereumChain",params:[{chainId:"0x38",chainName:"BNB Smart Chain",nativeCurrency:{name:"BNB",symbol:"BNB",decimals:18},rpcUrls:["https://bsc-dataseed.binance.org/"],blockExplorerUrls:["https://bscscan.com"]}]});
+      } else { throw e; }
+    }
+    var pr = await ethCall("0x9d1b464a");
+    var priceWei = BigInt(pr);
+    var valueWei = priceWei * BigInt(q);
+    var qtyHex = q.toString(16).padStart(64, "0");
+    st.textContent = T[lang].status_confirm;
+    var txHash = await window.ethereum.request({method:"eth_sendTransaction",params:[{from:from,to:CONTRACT,value:"0x" + valueWei.toString(16),data:"0xa0712d68" + qtyHex}]});
+    st.innerHTML = T[lang].status_success + '<a href="https://bscscan.com/tx/' + txHash + '" target="_blank" rel="noopener">' + txHash.slice(0, 12) + "…</a>";
+    setTimeout(readLive, 5000);
+  } catch(e) {
+    st.textContent = T[lang].status_failed;
+  }
+}
+function updateSupportHref(){
+  var btn = document.getElementById("supportPost");
+  if (btn) {
+    btn.href = "https://x.com/intent/tweet?text=" + encodeURIComponent(T[lang].support_text) + "&url=" + encodeURIComponent(location.href) + "&hashtags=HATCHIE,NFT,BNBChain";
+  }
+}
+function chg(d){
+  q = Math.max(1, Math.min(11, q + d));
+  document.getElementById("q").textContent = q;
+  updateTotal();
+}
+function copyLink(){
+  navigator.clipboard.writeText(location.href).then(function(){
+    document.getElementById("copied").textContent = T[lang].copied;
+  });
+}
+document.querySelectorAll(".lang button").forEach(function(b){
+  b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang")); });
+});
+try {
+  var saved = localStorage.getItem("hatchie_lang");
+  if (saved && T[saved]) setLang(saved); else { updateTotal(); updateSupportHref(); }
+} catch(e) { updateTotal(); updateSupportHref(); }
+setInterval(tickCountdown, 1000);
+tickCountdown();
+readLive();
+</script>
+</body>
+</html>
