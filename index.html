@@ -97,13 +97,13 @@ td:first-child{color:#b9a6d6;width:46%}
         <span class="pill" data-t="phase1_label">第一阶段</span>
         <h3 style="margin-top:10px" data-t="phase1_title">代币 1 – 333</h3>
         <div style="margin:6px 0"><span class="pill gold" data-t="phase1_save">比第二阶段便宜 90%</span></div>
-        <div class="price">0.0005 BNB <small data-t="price1_idr">≈ Rp6,404*</small></div>
+        <div class="price">0.0005 BNB <small data-t="price1_idr">≈ $0.36*</small></div>
         <p class="muted" data-t="phase1_note">初始价格。前 333 颗。</p>
       </div>
       <div class="card">
         <span class="pill gold" data-t="phase2_label">第二阶段</span>
         <h3 style="margin-top:10px" data-t="phase2_title">代币 334 – 3,333</h3>
-        <div class="price">0.005 BNB <small data-t="price2_idr">≈ Rp64,043*</small></div>
+        <div class="price">0.005 BNB <small data-t="price2_idr">≈ $3.57*</small></div>
         <p class="muted" data-t="phase2_note">剩余 3,000 颗，直至售罄。</p>
       </div>
     </div>
@@ -126,7 +126,7 @@ td:first-child{color:#b9a6d6;width:46%}
       </div>
       <button class="btn" id="mintBtn" disabled onclick="doMint()">Mint</button>
       <p class="muted" id="mintStatus" style="margin-top:10px"></p>
-      <p class="note" data-t="mint_note">每钱包上限 11 枚为累计总数（非每阶段）— 已铸造 11 枚的钱包无法在第二阶段再次铸造。人民币价格为估算，依据 1 BNB ≈ Rp12,808,548 的汇率，随市场波动 — 合约价格始终以 BNB 计价。</p>
+      <p class="note" data-t="mint_note">每钱包上限 11 枚为累计总数（非每阶段）— 已铸造 11 枚的钱包无法在第二阶段再次铸造。美元价格为估算，依据 1 BNB ≈ $714.36 的汇率，随市场波动 — 合约价格始终以 BNB 计价。</p>
     </div>
   </section>
 
@@ -181,15 +181,15 @@ td:first-child{color:#b9a6d6;width:46%}
       <tr><td data-t="spec_standard">标准</td><td>BEP-721 (NFT)</td></tr>
       <tr><td data-t="spec_supply">总供应量</td><td>3,333</td></tr>
       <tr><td data-t="spec_ids">编号</td><td data-t="spec_ids_v">顺序编号 1 – 3,333</td></tr>
-      <tr><td data-t="spec_p1">第一阶段</td><td data-t="spec_p1_v">代币 1 – 333 · 0.0005 BNB (≈ Rp6,404*)</td></tr>
-      <tr><td data-t="spec_p2">第二阶段</td><td data-t="spec_p2_v">代币 334 – 3,333 · 0.005 BNB (≈ Rp64,043*)</td></tr>
-      <tr><td data-t="spec_sellout">售罄总额</td><td data-t="spec_sellout_v">15.1665 BNB (≈ Rp194,260,843*)</td></tr>
+      <tr><td data-t="spec_p1">第一阶段</td><td data-t="spec_p1_v">代币 1 – 333 · 0.0005 BNB (≈ $0.36*)</td></tr>
+      <tr><td data-t="spec_p2">第二阶段</td><td data-t="spec_p2_v">代币 334 – 3,333 · 0.005 BNB (≈ $3.57*)</td></tr>
+      <tr><td data-t="spec_sellout">售罄总额</td><td data-t="spec_sellout_v">15.1665 BNB (≈ $10,834*)</td></tr>
       <tr><td data-t="spec_max">每钱包上限</td><td data-t="spec_max_v">11（总计，累计 — 老项目模式）</td></tr>
       <tr><td data-t="spec_rarity">稀有度</td><td data-t="spec_rarity_v">待定 — 各形态数量尚未确认</td></tr>
       <tr><td data-t="spec_contract">合约</td><td><a href="https://bscscan.com/address/0x28918c8DA0836dC984057a04865b17A5820398fb" target="_blank" rel="noopener">0x2891…0398fb</a></td></tr>
       <tr><td data-t="spec_x">X 账号</td><td><a href="https://x.com/HATCHIEggy" target="_blank" rel="noopener">@HATCHIEggy</a></td></tr>
     </table></div>
-    <p class="note" data-t="spec_note">* 人民币价格估算依据 1 BNB ≈ Rp12,808,548（CoinLore，2026年10月31日 19:15 UTC）。这不是银行到账的人民币 — BNB 仍需出售，且有网络手续费。</p>
+    <p class="note" data-t="spec_note">* 美元价格估算依据 1 BNB ≈ $714.36（Finnhub，2026年11月1日）。这不是银行到账的美元 — BNB 仍需出售，且有网络手续费。</p>
   </section>
 
   <section id="contracts">
@@ -226,7 +226,7 @@ phase2_label:"第二阶段",phase2_title:"代币 334 – 3,333",phase2_note:"剩
 mintcard_label:"铸造卡",stat_supply:"总供应量",stat_minted:"已铸造",stat_price1:"第一阶段价格",stat_max:"每钱包上限（总计）",
 pill_live:"铸造已开启 — 13:00 UTC 开放",countdown_to:"距离开启：",countdown_open:"铸造已开启！",mint_now:"立即铸造",mint_closed:"13:00 UTC 开放铸造",
 status_nowallet:"请在支持 BNB Chain 的钱包浏览器中打开本页（如 Binance Wallet / MetaMask）。",status_connecting:"正在连接钱包…",status_switching:"正在切换到 BNB Mainnet…",status_confirm:"请在钱包中确认交易…",status_success:"铸造成功！交易：",status_failed:"交易失败或被拒绝，请重试。",status_open_wait:"铸造将于 13:00 UTC 开放，请稍后再试。",
-mint_note:"每钱包上限 11 枚为累计总数（非每阶段）— 已铸造 11 枚的钱包无法在第二阶段再次铸造。人民币价格为估算，依据 1 BNB ≈ Rp12,808,548 的汇率，随市场波动 — 合约价格始终以 BNB 计价。",
+mint_note:"每钱包上限 11 枚为累计总数（非每阶段）— 已铸造 11 枚的钱包无法在第二阶段再次铸造。美元价格为估算，依据 1 BNB ≈ $714.36 的汇率，随市场波动 — 合约价格始终以 BNB 计价。",
 phase1_save:"比第二阶段便宜 90%",phase_switch:"第 333 颗铸造完成后，价格将自动切换为第二阶段价格。",
 support_kicker:"支持",support_title:"支持 HATCHIE",
 support_sub:"喜欢、评论、转发都从主页开始 — X 没有“一键点赞主页”的链接，点赞/评论/转发是针对单条帖子的，所以下面按钮会带你到主页与最新帖子，你可以在那里直接支持。",
@@ -242,13 +242,13 @@ how_3:"确认铸造 — 点击 Mint 并在钱包中批准交易。你只需支�
 how_4:"查看你的 NFT — NFT 将按剩余编号从小到大顺序进入你的钱包。",
 spec_kicker:"规格表",spec_title:"HATCHIE 规格",spec_name:"名称",tagline:"每一颗蛋都蕴藏着传奇。",
 spec_chain:"链",spec_standard:"标准",spec_supply:"总供应量",spec_ids:"编号",spec_ids_v:"顺序编号 1 – 3,333",
-spec_p1:"第一阶段",spec_p1_v:"代币 1 – 333 · 0.0005 BNB (≈ Rp6,404*)",
-spec_p2:"第二阶段",spec_p2_v:"代币 334 – 3,333 · 0.005 BNB (≈ Rp64,043*)",
-spec_sellout:"售罄总额",spec_sellout_v:"15.1665 BNB (≈ Rp194,260,843*)",
+spec_p1:"第一阶段",spec_p1_v:"代币 1 – 333 · 0.0005 BNB (≈ $0.36*)",
+spec_p2:"第二阶段",spec_p2_v:"代币 334 – 3,333 · 0.005 BNB (≈ $3.57*)",
+spec_sellout:"售罄总额",spec_sellout_v:"15.1665 BNB (≈ $10,834*)",
 spec_max:"每钱包上限",spec_max_v:"11（总计，累计 — 老项目模式）",
 spec_rarity:"稀有度",spec_rarity_v:"待定 — 各形态数量尚未确认",
 spec_contract:"合约",spec_contract_v:"已部署",spec_x:"X 账号",
-spec_note:"* 人民币价格估算依据 1 BNB ≈ Rp12,808,548（CoinLore，2026年10月31日 19:15 UTC）。这不是银行到账的人民币 — BNB 仍需出售，且有网络手续费。",
+spec_note:"* 美元价格估算依据 1 BNB ≈ $714.36（Finnhub，2026年11月1日）。这不是银行到账的美元 — BNB 仍需出售，且有网络手续费。",
 contracts_kicker:"链上 · BNB Chain",contracts_title:"合约",
 contracts_text:"HATCHIE 合约已部署于 BNB Chain，地址、BscScan 与 metadata 均已上线。",
 copy_btn:"复制页面链接",footer:"HATCHIE — 每一颗蛋都蕴藏着传奇。",
@@ -267,7 +267,7 @@ phase2_label:"PHASE 2",phase2_title:"Token 334 – 3,333",phase2_note:"Remaining
 mintcard_label:"MINT CARD",stat_supply:"Total Supply",stat_minted:"Minted",stat_price1:"Phase 1 Price",stat_max:"Max / Wallet (total)",
 pill_live:"MINT IS LIVE — Opened 13:00 UTC",countdown_to:"Opens in: ",countdown_open:"Mint is LIVE!",mint_now:"Mint Now",mint_closed:"Opens 13:00 UTC",
 status_nowallet:"Open this page in a BNB Chain wallet browser (e.g. Binance Wallet / MetaMask).",status_connecting:"Connecting wallet…",status_switching:"Switching to BNB Mainnet…",status_confirm:"Confirm the transaction in your wallet…",status_success:"Mint successful! Tx: ",status_failed:"Transaction failed or rejected, please try again.",status_open_wait:"Mint opens at 13:00 UTC, please try again then.",
-mint_note:"Max 11 per wallet is cumulative (not per phase) — a wallet that already minted 11 cannot mint again in Phase 2. IDR prices are estimates at 1 BNB ≈ Rp12,808,548 and move with the market — contract prices are always in BNB.",
+mint_note:"Max 11 per wallet is cumulative (not per phase) — a wallet that already minted 11 cannot mint again in Phase 2. USD prices are estimates at 1 BNB ≈ $714.36 and move with the market — contract prices are always in BNB.",
 phase1_save:"90% cheaper than Phase 2",phase_switch:"Once token #333 is minted, the price automatically switches to the Phase 2 price.",
 support_kicker:"SUPPORT",support_title:"Support HATCHIE",
 support_sub:"Likes, comments, and reposts happen on individual posts — X has no single link that likes a whole profile, so these buttons take you to the profile and its latest posts, where you can support directly.",
@@ -283,13 +283,13 @@ how_3:"Confirm mint — press Mint and approve the transaction in your wallet. Y
 how_4:"Check your NFT — the NFT goes to your wallet with the lowest still-available sequential ID.",
 spec_kicker:"SPEC SHEET",spec_title:"HATCHIE Specifications",spec_name:"Name",tagline:"Every Egg Holds a Legend.",
 spec_chain:"Chain",spec_standard:"Standard",spec_supply:"Total Supply",spec_ids:"IDs",spec_ids_v:"Sequential 1 – 3,333",
-spec_p1:"Phase 1",spec_p1_v:"Token 1 – 333 · 0.0005 BNB (≈ Rp6,404*)",
-spec_p2:"Phase 2",spec_p2_v:"Token 334 – 3,333 · 0.005 BNB (≈ Rp64,043*)",
-spec_sellout:"Total if Sold Out",spec_sellout_v:"15.1665 BNB (≈ Rp194,260,843*)",
+spec_p1:"Phase 1",spec_p1_v:"Token 1 – 333 · 0.0005 BNB (≈ $0.36*)",
+spec_p2:"Phase 2",spec_p2_v:"Token 334 – 3,333 · 0.005 BNB (≈ $3.57*)",
+spec_sellout:"Total if Sold Out",spec_sellout_v:"15.1665 BNB (≈ $10,834*)",
 spec_max:"Max per Wallet",spec_max_v:"11 (total, cumulative — old-project pattern)",
 spec_rarity:"Rarity",spec_rarity_v:"Pending — counts per variant not yet confirmed",
 spec_contract:"Contract",spec_contract_v:"Deployed",spec_x:"X Profile",
-spec_note:"* IDR estimates use 1 BNB ≈ Rp12,808,548 (CoinLore, 31 Oct 2026 19:15 UTC). This is not IDR in a bank account — BNB still needs to be sold and network fees apply.",
+spec_note:"* USD estimates use 1 BNB ≈ $714.36 (Finnhub, 1 Nov 2026). This is not USD in a bank account — BNB still needs to be sold and network fees apply.",
 contracts_kicker:"ON-CHAIN · BNB CHAIN",contracts_title:"Contracts",
 contracts_text:"The HATCHIE contract is deployed on BNB Chain. The address, BscScan link, and metadata below are live.",
 copy_btn:"Copy Page Link",footer:"HATCHIE — Every Egg Holds a Legend.",
@@ -308,7 +308,7 @@ phase2_label:"フェーズ2",phase2_title:"トークン 334 – 3,333",phase2_no
 mintcard_label:"ミントカード",stat_supply:"総供給量",stat_minted:"ミント済み",stat_price1:"フェーズ1価格",stat_max:"ウォレット上限（合計）",
 pill_live:"ミント開始 — 13:00 UTC に開放",countdown_to:"開始まで：",countdown_open:"ミント開始！",mint_now:"今すぐミント",mint_closed:"13:00 UTC に開始",
 status_nowallet:"BNB Chain 対応ウォレットブラウザ（Binance Wallet / MetaMask など）で本ページを開いてください。",status_connecting:"ウォレットに接続中…",status_switching:"BNB Mainnet に切替中…",status_confirm:"ウォレットで取引を確認してください…",status_success:"ミント成功！取引：",status_failed:"取引が失敗または拒否されました。再試行してください。",status_open_wait:"ミントは 13:00 UTC に開始します。その後再試行してください。",
-mint_note:"ウォレット上限11枚は累計（フェーズごとではありません）— すでに11枚をミントしたウォレットはフェーズ2で再度ミントできません。IDR価格は1 BNB ≈ Rp12,808,548での推定で、相場により変動します — 契約価格は常にBNB建てです。",
+mint_note:"ウォレット上限11枚は累計（フェーズごとではありません）— すでに11枚をミントしたウォレットはフェーズ2で再度ミントできません。USD価格は1 BNB ≈ $714.36での推定で、相場により変動します — 契約価格は常にBNB建てです。",
 phase1_save:"フェーズ2より90%お得",phase_switch:"333個目がミントされると、価格は自動的にフェーズ2価格に切り替わります。",
 support_kicker:"応援",support_title:"HATCHIE を応援",
 support_sub:"いいね・コメント・リポストは個別の投稿に対するものです — プロフィール全体に一括でいいねするリンクは X にはありません。そのため、以下のボタンでプロフィールと最新投稿へ移動し、そこで直接応援できます。",
@@ -324,13 +324,13 @@ how_3:"ミントを確定 — Mint を押し、ウォレットで取引を承認
 how_4:"NFTを確認 — NFT は残りの番号の小さい順にウォレットへ送られます。",
 spec_kicker:"仕様",spec_title:"HATCHIE 仕様",spec_name:"名称",tagline:"すべての卵に伝説が宿る。",
 spec_chain:"チェーン",spec_standard:"規格",spec_supply:"総供給量",spec_ids:"ID",spec_ids_v:"連番 1 – 3,333",
-spec_p1:"フェーズ1",spec_p1_v:"トークン 1 – 333 · 0.0005 BNB (≈ Rp6,404*)",
-spec_p2:"フェーズ2",spec_p2_v:"トークン 334 – 3,333 · 0.005 BNB (≈ Rp64,043*)",
-spec_sellout:"完売時の合計",spec_sellout_v:"15.1665 BNB (≈ Rp194,260,843*)",
+spec_p1:"フェーズ1",spec_p1_v:"トークン 1 – 333 · 0.0005 BNB (≈ $0.36*)",
+spec_p2:"フェーズ2",spec_p2_v:"トークン 334 – 3,333 · 0.005 BNB (≈ $3.57*)",
+spec_sellout:"完売時の合計",spec_sellout_v:"15.1665 BNB (≈ $10,834*)",
 spec_max:"ウォレット上限",spec_max_v:"11（合計、累計 — 旧プロジェクト方式）",
 spec_rarity:"レアリティ",spec_rarity_v:"確認待ち — 形態ごとの数量は未確認",
 spec_contract:"コントラクト",spec_contract_v:"デプロイ済み",spec_x:"X プロフィール",
-spec_note:"* IDR推定は1 BNB ≈ Rp12,808,548（CoinLore、2026年10月31日19:15 UTC）に基づきます。これは銀行口座のIDRではありません — BNBは売却が必要で、ネットワーク手数料がかかります。",
+spec_note:"* USD推定は1 BNB ≈ $714.36（Finnhub、2026年11月1日）に基づきます。これは銀行口座のUSDではありません — BNBは売却が必要で、ネットワーク手数料がかかります。",
 contracts_kicker:"オンチェーン · BNB Chain",contracts_title:"コントラクト",
 contracts_text:"HATCHIEコントラクトはBNB Chainにデプロイ済みです。アドレス、BscScan、メタデータはライブです。",
 copy_btn:"ページリンクをコピー",footer:"HATCHIE — すべての卵に伝説が宿る。",
