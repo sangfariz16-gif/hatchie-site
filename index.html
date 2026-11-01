@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HATCHIE — 每一颗蛋都蕴藏着传奇。</title>
-<meta name="description" content="HATCHIE — Every Egg Holds a Legend. 3,333 NFT on BNB Chain. Phase 1: 0.0005 BNB, Phase 2: 0.005 BNB. Preview page, mint not open yet.">
+<meta name="description" content="HATCHIE — Every Egg Holds a Legend. 3,333 NFT on BNB Chain. Phase 1: 0.0005 BNB, Phase 2: 0.005 BNB. Mint is LIVE.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0d0714;color:#f3efff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
@@ -77,7 +77,7 @@ td:first-child{color:#b9a6d6;width:46%}
 
 <div class="wrap">
   <div class="hero">
-    <span class="pill" id="mintPill" data-t="pill_preview">预览 — 尚未开启铸造</span>
+    <span class="pill" id="mintPill" data-t="pill_live">铸造已开启 — 13:00 UTC 开放</span>
     <div style="margin-top:16px"><img src="assets/hero.jpg" alt="HATCHIE hero egg"></div>
     <h1 data-t="hero_title">每一颗蛋都蕴藏着传奇。</h1>
     <p data-t="hero_sub">3,333 颗传奇之蛋，铸造于 BNB Chain。每颗蛋都会孵化出一个角色，编号按顺序从小到大分配。</p>
@@ -91,7 +91,7 @@ td:first-child{color:#b9a6d6;width:46%}
   <section id="mint">
     <div class="kicker" data-t="mint_kicker">铸造 · BNB Chain</div>
     <h2 data-t="mint_title">两个阶段，一个传奇。</h2>
-    <p class="muted" data-t="mint_sub">以下价格与阶段为预览规格。铸造尚未开启 — 铸造按钮将在合约部署并经你确认开启后才生效。</p>
+    <p class="muted" data-t="mint_sub">以下为正式价格与阶段。铸造已开启 — 选择数量并点击 Mint 即可铸造。</p>
     <div class="grid2" style="margin-top:16px">
       <div class="card phase">
         <span class="pill" data-t="phase1_label">第一阶段</span>
@@ -110,10 +110,10 @@ td:first-child{color:#b9a6d6;width:46%}
 
     <p class="note" data-t="phase_switch">第 333 颗铸造完成后，价格将自动切换为第二阶段价格。</p>
     <div class="card" style="margin-top:14px">
-      <span class="pill" data-t="mintcard_label">铸造卡 — 预览</span>
+      <span class="pill" data-t="mintcard_label">铸造卡</span>
       <div class="grid4">
         <div class="stat"><b>3,333</b><span data-t="stat_supply">总供应量</span></div>
-        <div class="stat"><b id="statMinted">0 / 3,333</b><span data-t="stat_minted">已铸造（预览）</span></div>
+        <div class="stat"><b id="statMinted">0 / 3,333</b><span data-t="stat_minted">已铸造</span></div>
         <div class="stat"><b id="statPrice">0.0005 BNB</b><span data-t="stat_price1">第一阶段价格</span></div>
         <div class="stat"><b>11</b><span data-t="stat_max">每钱包上限（总计）</span></div>
       </div>
@@ -163,7 +163,7 @@ td:first-child{color:#b9a6d6;width:46%}
 
   <section id="how">
     <div class="kicker" data-t="how_kicker">铸造指南 — 分步说明</div>
-    <h2 data-t="how_title">铸造方式（开启后）</h2>
+    <h2 data-t="how_title">铸造方式</h2>
     <ol class="steps">
       <li data-t="how_1"><b>连接钱包</b> — 在支持 BNB Chain 的钱包中打开本页（如 Binance Wallet / MetaMask），并确保网络为 BNB Mainnet（链 56）。</li>
       <li data-t="how_2"><b>选择数量</b> — 设置铸造数量（不超过每钱包上限），并核对 BNB 总额。</li>
@@ -216,15 +216,14 @@ td:first-child{color:#b9a6d6;width:46%}
 var T = {
 zh: {
 nav_mint:"铸造",nav_characters:"角色",nav_how:"铸造指南",nav_spec:"规格",nav_contracts:"合约",
-pill_preview:"预览 — 尚未开启铸造",hero_title:"每一颗蛋都蕴藏着传奇。",
+hero_title:"每一颗蛋都蕴藏着传奇。",
 hero_sub:"3,333 颗传奇之蛋，铸造于 BNB Chain。每颗蛋都会孵化出一个角色，编号按顺序从小到大分配。",
 btn_mint_view:"查看铸造",btn_characters:"查看角色",
 mint_kicker:"铸造 · BNB Chain",mint_title:"两个阶段，一个传奇。",
-mint_sub:"以下价格与阶段为预览规格。铸造尚未开启 — 铸造按钮将在合约部署并经你确认开启后才生效。",
+mint_sub:"以下为正式价格与阶段。铸造已开启 — 选择数量并点击 Mint 即可铸造。",
 phase1_label:"第一阶段",phase1_title:"代币 1 – 333",phase1_note:"初始价格。前 333 颗。",
 phase2_label:"第二阶段",phase2_title:"代币 334 – 3,333",phase2_note:"剩余 3,000 颗，直至售罄。",
-mintcard_label:"铸造卡 — 预览",stat_supply:"总供应量",stat_minted:"已铸造（预览）",stat_price1:"第一阶段价格",stat_max:"每钱包上限（总计）",
-btn_mint_disabled:"尚未开启铸造",
+mintcard_label:"铸造卡",stat_supply:"总供应量",stat_minted:"已铸造",stat_price1:"第一阶段价格",stat_max:"每钱包上限（总计）",
 pill_live:"铸造已开启 — 13:00 UTC 开放",countdown_to:"距离开启：",countdown_open:"铸造已开启！",mint_now:"立即铸造",mint_closed:"13:00 UTC 开放铸造",
 status_nowallet:"请在支持 BNB Chain 的钱包浏览器中打开本页（如 Binance Wallet / MetaMask）。",status_connecting:"正在连接钱包…",status_switching:"正在切换到 BNB Mainnet…",status_confirm:"请在钱包中确认交易…",status_success:"铸造成功！交易：",status_failed:"交易失败或被拒绝，请重试。",status_open_wait:"铸造将于 13:00 UTC 开放，请稍后再试。",
 mint_note:"每钱包上限 11 枚为累计总数（非每阶段）— 已铸造 11 枚的钱包无法在第二阶段再次铸造。人民币价格为估算，依据 1 BNB ≈ Rp12,808,548 的汇率，随市场波动 — 合约价格始终以 BNB 计价。",
@@ -236,7 +235,7 @@ support_note:"点赞 / 评论 / 转发：打开主页后，对最新帖子点赞
 support_text:"我支持 HATCHIE！每一颗蛋都蕴藏着传奇。🐣💜",
 char_kicker:"收藏",char_title:"一颗蛋，九种形态",char_sub:"以下为你提供的 artwork 中可见的九种形态。下方名称为外观描述；角色正式名称与各形态稀有度数量待你确认。",
 tile_egg:"蛋守护者",tile_crown:"皇冠蛋",tile_shadow:"暗影法师",tile_crystal:"水晶巫师",tile_flame:"烈焰龙",tile_sky:"天空天使",tile_cyber:"赛博蛋",tile_void:"虚空蛋",tile_golden:"金凤凰",
-how_kicker:"铸造指南 — 分步说明",how_title:"铸造方式（开启后）",
+how_kicker:"铸造指南 — 分步说明",how_title:"铸造方式",
 how_1:"连接钱包 — 在支持 BNB Chain 的钱包中打开本页（如 Binance Wallet / MetaMask），并确保网络为 BNB Mainnet（链 56）。",
 how_2:"选择数量 — 设置铸造数量（不超过每钱包上限），并核对 BNB 总额。",
 how_3:"确认铸造 — 点击 Mint 并在钱包中批准交易。你只需支付铸造价格 + 网络 gas 费。",
@@ -248,25 +247,24 @@ spec_p2:"第二阶段",spec_p2_v:"代币 334 – 3,333 · 0.005 BNB (≈ Rp64,04
 spec_sellout:"售罄总额",spec_sellout_v:"15.1665 BNB (≈ Rp194,260,843*)",
 spec_max:"每钱包上限",spec_max_v:"11（总计，累计 — 老项目模式）",
 spec_rarity:"稀有度",spec_rarity_v:"待定 — 各形态数量尚未确认",
-spec_contract:"合约",spec_contract_v:"尚未部署",spec_x:"X 账号",
+spec_contract:"合约",spec_contract_v:"已部署",spec_x:"X 账号",
 spec_note:"* 人民币价格估算依据 1 BNB ≈ Rp12,808,548（CoinLore，2026年10月31日 19:15 UTC）。这不是银行到账的人民币 — BNB 仍需出售，且有网络手续费。",
 contracts_kicker:"链上 · BNB Chain",contracts_title:"合约",
-contracts_text:"HATCHIE 合约尚未部署。合约地址、BscScan 与 metadata 将在部署后显示于此 — 预览页不会展示虚假地址。",
+contracts_text:"HATCHIE 合约已部署于 BNB Chain，地址、BscScan 与 metadata 均已上线。",
 copy_btn:"复制页面链接",footer:"HATCHIE — 每一颗蛋都蕴藏着传奇。",
 qty_total:function(n){return "总计：" + (n*0.0005).toFixed(4) + " BNB（第一阶段）";},
 copied:"链接已复制。"
 },
 en: {
 nav_mint:"Mint",nav_characters:"Characters",nav_how:"How It Works",nav_spec:"Spec Sheet",nav_contracts:"Contracts",
-pill_preview:"PREVIEW — MINT NOT OPEN YET",hero_title:"Every Egg Holds a Legend.",
+hero_title:"Every Egg Holds a Legend.",
 hero_sub:"3,333 legendary eggs on BNB Chain. Each egg hatches into one character — IDs are assigned sequentially from the lowest.",
 btn_mint_view:"View Mint",btn_characters:"View Characters",
 mint_kicker:"MINT · BNB CHAIN",mint_title:"Two Phases. One Legend.",
-mint_sub:"Prices and phases below are preview specs. Mint is not active yet — the mint button will only work after the contract is deployed and you confirm opening mint.",
+mint_sub:"Live prices and phases below. Mint is open — pick a quantity and hit Mint.",
 phase1_label:"PHASE 1",phase1_title:"Token 1 – 333",phase1_note:"Opening price. First 333 tokens.",
 phase2_label:"PHASE 2",phase2_title:"Token 334 – 3,333",phase2_note:"Remaining 3,000 tokens until sold out.",
-mintcard_label:"MINT CARD — PREVIEW",stat_supply:"Total Supply",stat_minted:"Minted (preview)",stat_price1:"Phase 1 Price",stat_max:"Max / Wallet (total)",
-btn_mint_disabled:"Mint Not Open Yet",
+mintcard_label:"MINT CARD",stat_supply:"Total Supply",stat_minted:"Minted",stat_price1:"Phase 1 Price",stat_max:"Max / Wallet (total)",
 pill_live:"MINT IS LIVE — Opened 13:00 UTC",countdown_to:"Opens in: ",countdown_open:"Mint is LIVE!",mint_now:"Mint Now",mint_closed:"Opens 13:00 UTC",
 status_nowallet:"Open this page in a BNB Chain wallet browser (e.g. Binance Wallet / MetaMask).",status_connecting:"Connecting wallet…",status_switching:"Switching to BNB Mainnet…",status_confirm:"Confirm the transaction in your wallet…",status_success:"Mint successful! Tx: ",status_failed:"Transaction failed or rejected, please try again.",status_open_wait:"Mint opens at 13:00 UTC, please try again then.",
 mint_note:"Max 11 per wallet is cumulative (not per phase) — a wallet that already minted 11 cannot mint again in Phase 2. IDR prices are estimates at 1 BNB ≈ Rp12,808,548 and move with the market — contract prices are always in BNB.",
@@ -278,7 +276,7 @@ support_note:"To like / comment / repost: open the profile, then like, comment, 
 support_text:"I support HATCHIE! Every Egg Holds a Legend. 🐣💜",
 char_kicker:"COLLECTION",char_title:"9 Variants from One Egg",char_sub:"Nine forms visible in the artwork you sent. Names below are visual descriptions; official character names and rarity counts per variant are pending your confirmation.",
 tile_egg:"Egg Guardian",tile_crown:"Crown Egg",tile_shadow:"Shadow Mage",tile_crystal:"Crystal Wizard",tile_flame:"Flame Dragon",tile_sky:"Sky Angel",tile_cyber:"Cyber Egg",tile_void:"Void Egg",tile_golden:"Golden Phoenix",
-how_kicker:"HOW IT WORKS — STEP BY STEP",how_title:"How to Mint (Once Open)",
+how_kicker:"HOW IT WORKS — STEP BY STEP",how_title:"How to Mint",
 how_1:"Connect your wallet — open this page in a wallet that supports BNB Chain (e.g. Binance Wallet / MetaMask) and make sure the network is BNB Mainnet (chain 56).",
 how_2:"Choose quantity — set how many to mint (within the per-wallet limit) and check the total BNB.",
 how_3:"Confirm mint — press Mint and approve the transaction in your wallet. You only pay the mint price + network gas.",
@@ -290,25 +288,24 @@ spec_p2:"Phase 2",spec_p2_v:"Token 334 – 3,333 · 0.005 BNB (≈ Rp64,043*)",
 spec_sellout:"Total if Sold Out",spec_sellout_v:"15.1665 BNB (≈ Rp194,260,843*)",
 spec_max:"Max per Wallet",spec_max_v:"11 (total, cumulative — old-project pattern)",
 spec_rarity:"Rarity",spec_rarity_v:"Pending — counts per variant not yet confirmed",
-spec_contract:"Contract",spec_contract_v:"Not yet deployed",spec_x:"X Profile",
+spec_contract:"Contract",spec_contract_v:"Deployed",spec_x:"X Profile",
 spec_note:"* IDR estimates use 1 BNB ≈ Rp12,808,548 (CoinLore, 31 Oct 2026 19:15 UTC). This is not IDR in a bank account — BNB still needs to be sold and network fees apply.",
 contracts_kicker:"ON-CHAIN · BNB CHAIN",contracts_title:"Contracts",
-contracts_text:"The HATCHIE contract is not deployed yet. The contract address, BscScan, and metadata will appear here after deployment — this preview page shows no fake address.",
+contracts_text:"The HATCHIE contract is deployed on BNB Chain. The address, BscScan link, and metadata below are live.",
 copy_btn:"Copy Page Link",footer:"HATCHIE — Every Egg Holds a Legend.",
 qty_total:function(n){return "Total: " + (n*0.0005).toFixed(4) + " BNB (Phase 1)";},
 copied:"Link copied."
 },
 ja: {
 nav_mint:"ミント",nav_characters:"キャラクター",nav_how:"使い方",nav_spec:"仕様",nav_contracts:"コントラクト",
-pill_preview:"プレビュー — ミント未開始",hero_title:"すべての卵に伝説が宿る。",
+hero_title:"すべての卵に伝説が宿る。",
 hero_sub:"BNB Chain 上の 3,333 個の伝説の卵。卵はそれぞれ1体のキャラクターになり、ID は小さい順に割り当てられます。",
 btn_mint_view:"ミントを見る",btn_characters:"キャラクターを見る",
 mint_kicker:"ミント · BNB Chain",mint_title:"2つのフェーズ、1つの伝説。",
-mint_sub:"以下の価格とフェーズはプレビュー仕様です。ミントはまだ有効ではありません — 契約のデプロイと開始確認後にのみボタンが機能します。",
+mint_sub:"以下は正式な価格とフェーズです。ミントは開始しています — 数量を選んでミントしてください。",
 phase1_label:"フェーズ1",phase1_title:"トークン 1 – 333",phase1_note:"初期価格。最初の333個。",
 phase2_label:"フェーズ2",phase2_title:"トークン 334 – 3,333",phase2_note:"残り3,000個、完売まで。",
-mintcard_label:"ミントカード — プレビュー",stat_supply:"総供給量",stat_minted:"ミント済み（プレビュー）",stat_price1:"フェーズ1価格",stat_max:"ウォレット上限（合計）",
-btn_mint_disabled:"ミント未開始",
+mintcard_label:"ミントカード",stat_supply:"総供給量",stat_minted:"ミント済み",stat_price1:"フェーズ1価格",stat_max:"ウォレット上限（合計）",
 pill_live:"ミント開始 — 13:00 UTC に開放",countdown_to:"開始まで：",countdown_open:"ミント開始！",mint_now:"今すぐミント",mint_closed:"13:00 UTC に開始",
 status_nowallet:"BNB Chain 対応ウォレットブラウザ（Binance Wallet / MetaMask など）で本ページを開いてください。",status_connecting:"ウォレットに接続中…",status_switching:"BNB Mainnet に切替中…",status_confirm:"ウォレットで取引を確認してください…",status_success:"ミント成功！取引：",status_failed:"取引が失敗または拒否されました。再試行してください。",status_open_wait:"ミントは 13:00 UTC に開始します。その後再試行してください。",
 mint_note:"ウォレット上限11枚は累計（フェーズごとではありません）— すでに11枚をミントしたウォレットはフェーズ2で再度ミントできません。IDR価格は1 BNB ≈ Rp12,808,548での推定で、相場により変動します — 契約価格は常にBNB建てです。",
@@ -320,7 +317,7 @@ support_note:"いいね・コメント・リポストするには：プロフィ
 support_text:"HATCHIE を応援しています！すべての卵に伝説が宿る。🐣💜",
 char_kicker:"コレクション",char_title:"1つの卵から9つの姿",char_sub:"お送りいただいたアートワークに見られる9つの姿です。以下の名前は見た目の説明であり、正式名称とレアリティ数量は確認待ちです。",
 tile_egg:"エッグガーディアン",tile_crown:"クラウンエッグ",tile_shadow:"シャドウメイジ",tile_crystal:"クリスタルウィザード",tile_flame:"フレイムドラゴン",tile_sky:"スカイエンジェル",tile_cyber:"サイバーエッグ",tile_void:"ヴォイドエッグ",tile_golden:"ゴールデンフェニックス",
-how_kicker:"使い方 — ステップバイステップ",how_title:"ミント方法（開始後）",
+how_kicker:"使い方 — ステップバイステップ",how_title:"ミント方法",
 how_1:"ウォレットを接続 — BNB Chain 対応ウォレット（Binance Wallet / MetaMask など）で本ページを開き、ネットワークが BNB Mainnet（チェーン56）であることを確認してください。",
 how_2:"数量を選択 — 数量を設定し（ウォレット上限以内）、BNB合計を確認してください。",
 how_3:"ミントを確定 — Mint を押し、ウォレットで取引を承認してください。支払いはミント価格＋ネットワークガス代のみです。",
@@ -332,10 +329,10 @@ spec_p2:"フェーズ2",spec_p2_v:"トークン 334 – 3,333 · 0.005 BNB (≈ 
 spec_sellout:"完売時の合計",spec_sellout_v:"15.1665 BNB (≈ Rp194,260,843*)",
 spec_max:"ウォレット上限",spec_max_v:"11（合計、累計 — 旧プロジェクト方式）",
 spec_rarity:"レアリティ",spec_rarity_v:"確認待ち — 形態ごとの数量は未確認",
-spec_contract:"コントラクト",spec_contract_v:"未デプロイ",spec_x:"X プロフィール",
+spec_contract:"コントラクト",spec_contract_v:"デプロイ済み",spec_x:"X プロフィール",
 spec_note:"* IDR推定は1 BNB ≈ Rp12,808,548（CoinLore、2026年10月31日19:15 UTC）に基づきます。これは銀行口座のIDRではありません — BNBは売却が必要で、ネットワーク手数料がかかります。",
 contracts_kicker:"オンチェーン · BNB Chain",contracts_title:"コントラクト",
-contracts_text:"HATCHIEコントラクトは未デプロイです。コントラクトアドレス、BscScan、メタデータはデプロイ後にここに表示されます — プレビューページに偽のアドレスは表示されません。",
+contracts_text:"HATCHIEコントラクトはBNB Chainにデプロイ済みです。アドレス、BscScan、メタデータはライブです。",
 copy_btn:"ページリンクをコピー",footer:"HATCHIE — すべての卵に伝説が宿る。",
 qty_total:function(n){return "合計：" + (n*0.0005).toFixed(4) + " BNB（フェーズ1）";},
 copied:"リンクをコピーしました。"
