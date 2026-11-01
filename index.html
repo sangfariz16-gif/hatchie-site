@@ -67,7 +67,7 @@ td:first-child{color:#b9a6d6;width:46%}
 <body>
 <header class="top"><div class="topin">
   <div class="logo">HATCHIE<span>.</span></div>
-  <nav><a href="#mint" data-t="nav_mint">铸造</a><a href="#characters" data-t="nav_characters">角色</a><a href="#how" data-t="nav_how">铸造指南</a><a href="#spec" data-t="nav_spec">规格</a><a href="#contracts" data-t="nav_contracts">合约</a><a href="https://x.com/HATCHIEggy" target="_blank" rel="noopener">𝕏</a></nav>
+  <nav><a href="#mint" data-t="nav_mint">铸造</a><a href="#characters" data-t="nav_characters">角色</a><a href="#how" data-t="nav_how">铸造指南</a><a href="#spec" data-t="nav_spec">规格</a><a href="#contracts" data-t="nav_contracts">合约</a><a href="#agent" data-t="nav_agent">Agent 铸造</a><a href="https://x.com/HATCHIEggy" target="_blank" rel="noopener">𝕏</a></nav>
   <div class="lang">
     <button type="button" data-lang="zh" class="active">中文</button>
     <button type="button" data-lang="en">English</button>
@@ -141,6 +141,35 @@ td:first-child{color:#b9a6d6;width:46%}
         <a class="btn ghost" href="https://x.com/HATCHIEggy" target="_blank" rel="noopener" data-t="support_profile">访问主页</a>
       </div>
       <p class="note" data-t="support_note">点赞 / 评论 / 转发：打开主页后，对最新帖子点赞、评论或转发即可。</p>
+    </div>
+  </section>
+
+  <section id="agent">
+    <div class="kicker" data-t="agent_kicker">Agent 铸造</div>
+    <h2 data-t="agent_title">让你的 Agent 帮你铸造。</h2>
+    <div class="card">
+      <p class="muted" data-t="agent_sub">与手动铸造完全相同 — 同样的价格、阶段与每钱包上限，只是改由你的 AI Agent 执行。把下面的提示词复制给你的 Agent（提示词为英文，Agent 更易理解），并把数量改成你想铸造的枚数。Agent 必须先报出确切价格并经你确认后才能发送交易。</p>
+      <pre id="agentPrompt" style="white-space:pre-wrap;word-break:break-word;background:#1a0f2e;border:1px solid #3b0764;border-radius:12px;padding:14px;font-size:13px;line-height:1.6;overflow-x:auto">Mint HATCHIE NFTs for me on BNB Chain (chain id 56).
+NFT contract: 0x28918c8DA0836dC984057a04865b17A5820398fb
+Mint page: https://www.hatchieggy.fun/
+
+Rules - this is the SAME mint as the manual mint on the page, no discount, no special allocation:
+- Supply 3,333. Phase 1: tokens 1-333 at 0.0005 BNB each. Phase 2: tokens 334-3,333 at 0.005 BNB each. The price switches automatically once token #333 is minted.
+- Max 11 per wallet, cumulative total (not per phase).
+- The contract price is read once at transaction start and applies to the whole quantity.
+
+Steps:
+1. Call mintOpen(), totalMinted(), currentPrice() and mintedPerWallet(MY_WALLET) on the contract, and show me the exact price, the current phase, and how many I have already minted. If mintOpen() is false, STOP.
+2. If I have already minted 11, STOP and tell me I hit the wallet limit.
+3. Only after I confirm the quantity and total, call mint(QUANTITY) sending exactly currentPrice x QUANTITY in BNB - never more, no other function, and do NOT approve any token spending (this mint needs no approvals).
+4. Afterwards, report the transaction hash and my new token IDs.
+
+Quantity to mint: 1 (change this number if you want more, max 11 total per wallet).</pre>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <button class="btn ghost" onclick="copyAgentPrompt()" data-t="agent_copy">复制 Agent 提示词</button>
+        <span class="muted" id="agentCopied"></span>
+      </div>
+      <p class="note" data-t="agent_note">这不是免费或特殊配额铸造：价格、供应量与上限与手动铸造一致。铸造只需 BNB，无需批准任何代币支出 — 不要让 Agent 批准代币。</p>
     </div>
   </section>
 
@@ -253,7 +282,8 @@ contracts_kicker:"链上 · BNB Chain",contracts_title:"合约",
 contracts_text:"HATCHIE 合约已部署于 BNB Chain，地址、BscScan 与 metadata 均已上线。",
 copy_btn:"复制页面链接",footer:"HATCHIE — 每一颗蛋都蕴藏着传奇。",
 qty_total:function(n){return "总计：" + (n*0.0005).toFixed(4) + " BNB（第一阶段）";},
-copied:"链接已复制。"
+copied:"链接已复制。",
+agent_kicker:"Agent 铸造",agent_title:"让你的 Agent 帮你铸造。",agent_sub:"与手动铸造完全相同 — 同样的价格、阶段与每钱包上限，只是改由你的 AI Agent 执行。把下面的提示词复制给你的 Agent（提示词为英文，Agent 更易理解），并把数量改成你想铸造的枚数。Agent 必须先报出确切价格并经你确认后才能发送交易。",agent_copy:"复制 Agent 提示词",agent_copied:"Agent 提示词已复制。",agent_note:"这不是免费或特殊配额铸造：价格、供应量与上限与手动铸造一致。铸造只需 BNB，无需批准任何代币支出 — 不要让 Agent 批准代币。",nav_agent:"Agent 铸造"
 },
 en: {
 nav_mint:"Mint",nav_characters:"Characters",nav_how:"How It Works",nav_spec:"Spec Sheet",nav_contracts:"Contracts",
@@ -294,7 +324,8 @@ contracts_kicker:"ON-CHAIN · BNB CHAIN",contracts_title:"Contracts",
 contracts_text:"The HATCHIE contract is deployed on BNB Chain. The address, BscScan link, and metadata below are live.",
 copy_btn:"Copy Page Link",footer:"HATCHIE — Every Egg Holds a Legend.",
 qty_total:function(n){return "Total: " + (n*0.0005).toFixed(4) + " BNB (Phase 1)";},
-copied:"Link copied."
+copied:"Link copied.",
+agent_kicker:"AGENT MINT",agent_title:"Let Your Agent Mint for You.",agent_sub:"Exactly the same as the manual mint — same prices, phases and per-wallet limit — only executed by your AI agent. Copy the prompt below to your agent (the prompt is in English, which agents read best) and change the quantity to how many you want to mint. Your agent must quote the exact price and get your confirmation before sending any transaction.",agent_copy:"Copy Agent Prompt",agent_copied:"Agent prompt copied.",agent_note:"This is not a free or special-allocation mint: price, supply and limits are identical to the manual mint. Minting needs BNB only — no token spending approvals. Do not let your agent approve any token spending.",nav_agent:"Agent Mint"
 },
 ja: {
 nav_mint:"ミント",nav_characters:"キャラクター",nav_how:"使い方",nav_spec:"仕様",nav_contracts:"コントラクト",
@@ -335,7 +366,8 @@ contracts_kicker:"オンチェーン · BNB Chain",contracts_title:"コントラ
 contracts_text:"HATCHIEコントラクトはBNB Chainにデプロイ済みです。アドレス、BscScan、メタデータはライブです。",
 copy_btn:"ページリンクをコピー",footer:"HATCHIE — すべての卵に伝説が宿る。",
 qty_total:function(n){return "合計：" + (n*0.0005).toFixed(4) + " BNB（フェーズ1）";},
-copied:"リンクをコピーしました。"
+copied:"リンクをコピーしました。",
+agent_kicker:"エージェントミント",agent_title:"エージェントにミントしてもらう。",agent_sub:"手動ミントとまったく同じです — 価格、フェーズ、ウォレット上限は同一で、実行だけをAIエージェントに任せます。下のプロンプトをエージェントにコピーし（プロンプトは英語で、エージェントが読みやすい形式です）、数量を希望枚数に変更してください。エージェントは正確な価格を提示し、あなたの確認を得てから送信しなければなりません。",agent_copy:"エージェント用プロンプトをコピー",agent_copied:"エージェント用プロンプトをコピーしました。",agent_note:"これは無料ミントや特別枠ではありません。価格、供給量、上限は手動ミントと同一です。ミントに必要なのはBNBのみで、トークン支出の承認は不要です — エージェントにトークン承認をさせないでください。",nav_agent:"エージェントミント"
 }
 };
 var lang = "zh", q = 1;
@@ -447,6 +479,12 @@ function chg(d){
 function copyLink(){
   navigator.clipboard.writeText(location.href).then(function(){
     document.getElementById("copied").textContent = T[lang].copied;
+  });
+}
+function copyAgentPrompt(){
+  var t = document.getElementById("agentPrompt").innerText;
+  navigator.clipboard.writeText(t).then(function(){
+    document.getElementById("agentCopied").textContent = T[lang].agent_copied;
   });
 }
 document.querySelectorAll(".lang button").forEach(function(b){
